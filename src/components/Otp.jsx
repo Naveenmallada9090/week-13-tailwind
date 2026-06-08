@@ -4,18 +4,16 @@ import { useState, useRef } from "react";
 
 export function Otp({ number}) {
     const ref = useRef(Array(number).fill(0));
-
+    const [values, setValues] = useState(Array(number).fill("")) 
     const [disabled, setDisabled] = useState(true);
 
     return <div className="flex justify-center">
 
-        {Array(number).fill(1).map((x, index) => <SubOtpBox reference={(e) => ref.current[index] = e} key={index} onDone={() => {
-            console.log(ref)
-            console.log(index)
+        {Array(number).fill(1).map((x, index) => <SubOtpBox reference={e => ref.current[index] = e} key={index} onDone={() => {
             if (index + 1 >= number) {
                 return
             }
-            ref.current[index + 1].focus();
+            ref.current[index + 1].focus(); 
         }} goBack={() => {
             if (index == 0) {
                 return

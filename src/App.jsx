@@ -1,13 +1,13 @@
 
 import './App.css'
-import { Otp } from './components/Otp'
+import { SidebarClass1 } from './components/answers/1-basic-project'
+import { Sidebar2Transition } from './components/sidebars/Siderbar2Transition'
 
 function App() {
 
   return (
-    <div className="h-screen bg-blue-700">
-      <br/><br/><br/><br/> 
-      <Otp number={20} />
+    <div>
+      <SidebarClass1 />
     </div> 
   )
 }
